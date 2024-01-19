@@ -14,8 +14,9 @@ In this code, we query the *Windows Registry* to look for additional indications
 Employing multiple methods of checking for virtualization can increase the likelihood of evasion.
 
 ## Respone in a Windows Host
-> ![RegNotVM](https://github.com/ChrisMartin-CyberSec/VMchecker_registry/assets/111389653/09371899-ebdf-4156-974f-33ec912be011)
+> ![RegNotVMOutput](https://github.com/ChrisMartin-CyberSec/VMchecker_registry/assets/111389653/2b81df93-ce29-45d0-8f36-42203b72205a)
+
 
 
 ## Response in a Virtual Machine (VBox)
-> ![RegInVM](https://github.com/ChrisMartin-CyberSec/VMchecker_registry/assets/111389653/90f65b4d-5c3c-4e65-aebe-a61b0d5b17c9)
+> ![RegInVMOutput](https://github.com/ChrisMartin-CyberSec/VMchecker_registry/assets/111389653/089b4195-9d37-40fd-ac6a-4b6bda463268)
