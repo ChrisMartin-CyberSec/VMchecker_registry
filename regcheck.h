@@ -8,22 +8,24 @@
 
 typedef struct __regstruct
 {
-	__regstruct(HKEY hKey = 0, const char* lpSubKey = "", const char* lpValueName = "") : hKey{ hKey }, lpSubKey{ lpSubKey }, lpValueName{ lpValueName } {};
+	__regstruct(const char* lpValueName = "") : lpValueName{ lpValueName } {};
 
-	HKEY hKey{};
-	char SysProdValue[1024]{};
-	char BiosValue[1024]{};
-	const char* lpSubKey{};
+	char value[1024];
 	const char* lpValueName{};
+	bool inVM{};
+	char* vendors[2] = { VB, VM };		// Change if adding more vendors
+	size_t vendorlistsize = sizeof(vendors) / sizeof(vendors[0]);
 
-	bool RegKeyCompare(char* regvalue);
-	char* vendors[2] = { VB, VM };									// Change if adding more vendors
-	size_t vendorlistsize = sizeof(vendors)/sizeof(vendors[0]);
+	bool GetRegKeyValue();
+	void isVM();
+
 
 private:
-	char VB[100] = "VirtualBox";	
+	HKEY hKey = HKEY_LOCAL_MACHINE;
+	const char* lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\SystemInformation";
+	char VB[100] = "VirtualBox";
 	char VM[100] = "VMWare";
-																	// Add more vendors here
+						// Add more vendors here
 
 }regstruct, * pRegStruct;
 
